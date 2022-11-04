@@ -16,6 +16,9 @@ To be done:
 
 [ ] add themes lol
 
+[ ] add favicon
+
 [x] add button to clear array
 
 [x] responsiveness
+
