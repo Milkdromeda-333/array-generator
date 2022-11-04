@@ -12,7 +12,6 @@ With this project I:
 
 To be done:
 [] add animation styling to the copy button after its clicked
-[]add themes lol
-[] edit array ?
-[] add button to clear array, and edit (and save)
-[] responsiveness
+[] add themes lol
+[x] add button to clear array
+[x] responsiveness

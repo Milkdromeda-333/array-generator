@@ -92,6 +92,10 @@ button:hover {
     margin-left: 1rem;
 }
 
+#clear-btn:hover {
+    background-color: rgb(220, 3, 3);
+}
+
 .copy-btn-copied::before {
     content: "copied";
     left: 50%;

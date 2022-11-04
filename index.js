@@ -4,6 +4,7 @@ const submitBtn = document.querySelector("#submit-btn");
 const input = document.querySelector("input");
 const canvas = document.querySelector("#canvas");
 const copyBtn = document.querySelector("#copy-btn");
+const clearBtn = document.querySelector("#clear-btn");
 const userArr = [];
 
 // FUNCTIONS
@@ -52,4 +53,8 @@ copyBtn.addEventListener("click", () => {
         return;
     }
 
+});
+
+clearBtn.addEventListener("click", () => {
+    canvas.removeChild(canvas.lastChild);
 });
