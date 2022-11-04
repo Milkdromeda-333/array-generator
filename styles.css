@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background-color: forestgreen;
+    color: white;
+    text-align: center;
+}
+
+main {
+    margin: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+input {
+    color: black;
+    width: 40%;
+    height: 55px;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+
+input:focus,
+input:active {
+    outline-color: black;
+}
+
+button {
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 1rem 0;
+    width: 10rem;
+    font-size: 1.2rem;
+    transition: all 100ms ease-in;
+    background-color: transparent;
+    color: white;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+.sec2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    border: 2px solid white;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 70%;
+    min-height: 50vh;
+    margin-inline: auto;
+}
+
+#canvas {
+    margin: 1rem;
+    border-radius: 5px;
+    min-height: 6rem;
+    text-align: center;
+}
+
+.sec2-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1rem;
+    top: -60px;
+}
+
+#copy-btn,
+#copy-btn {
+    position: relative;
+}
+
+#clear-btn {
+    background-color: red;
+    margin-left: 1rem;
+}
+
+.copy-btn-copied::before {
+    content: "copied";
+    left: 50%;
+    position: absolute;
+    top: -1.3rem;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+
+details {
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+details img {
+    width: 40%;
+    margin-bottom: 3rem;
+}
+
+/* MEDIA QUERIES FOR MOBILE */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .sec2-btns {
+        flex-direction: column;
+        margin-top: 2.7rem;
+    }
+
+    #submit-btn {
+        width: 100%;
+    }
+
+    #clear-btn {
+        margin: 1rem 0 0;
+    }
+
+    .sec2 {
+        width: 100%;
+        min-height: 50vh;
+        margin-bottom: 3rem;
+        padding: 1rem;
+    }
+
+    #canvas {
+        margin: 0;
+    }
+
+    details img {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+}
