@@ -11,9 +11,10 @@ With this project I:
 - Learned that codesandbox is kinda crappy.
 
 To be done:
-[] add animation styling to the copy button after its clicked
 
-[] add themes lol
+[ ] add animation styling to the copy button after its clicked
+
+[ ] add themes lol
 
 [x] add button to clear array
 
