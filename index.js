@@ -5,13 +5,19 @@ const input = document.querySelector("input");
 const canvas = document.querySelector("#canvas");
 const copyBtn = document.querySelector("#copy-btn");
 const clearBtn = document.querySelector("#clear-btn");
+const stringifyBtn = document.querySelector("#stringify-btn");
+let isStringified = false;
 const userArr = [];
 
 // FUNCTIONS
 
 // handles submitting the user input
 function submit() {
-    const element = input.value;
+
+    let element = input.value;
+    if (isStringified === true) {
+        element = `"${input.value}"`;
+    }
     userArr.push(element);
     let arr = document.createElement("p");
     arr.className = "generated-arr";
@@ -29,7 +35,7 @@ document.addEventListener("keyup", (e) => {
     }
 });
 
-// submits users input
+// submits users input if they hit the submit button
 submitBtn.addEventListener("click", submit);
 
 
@@ -59,3 +65,19 @@ clearBtn.addEventListener("click", () => {
     canvas.removeChild(canvas.lastChild);
     userArr.length = 0;
 });
+
+// onclick the program will toggle stringifying the users input
+stringifyBtn.addEventListener("click", () => {
+
+    if (isStringified === true) {
+        isStringified = false;
+        stringifyBtn.textContent = "stringify!";
+    } else if (isStringified === false) {
+        isStringified = true;
+        stringifyBtn.textContent = "UNstringify!";
+    }
+
+    console.log(isStringified);
+});
+
+console.log("isstringifyed onmount: " + isStringified);

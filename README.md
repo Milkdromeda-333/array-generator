@@ -18,6 +18,12 @@ To be done:
 
 [ ] add favicon
 
+[  ] give formatting options. 
+[x] for string
+[ ] array literals
+[ ] object literals
+[ ] each element on it's own line
+
 [x] add button to clear array
 
 [x] responsiveness
