@@ -57,4 +57,5 @@ copyBtn.addEventListener("click", () => {
 
 clearBtn.addEventListener("click", () => {
     canvas.removeChild(canvas.lastChild);
+    userArr.length = 0;
 });
