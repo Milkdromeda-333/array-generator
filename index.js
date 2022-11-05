@@ -123,14 +123,3 @@ formatBtn.addEventListener("click", () => {
         rerenderArr();
     }
 });
-
-// toggles the format button panel
-formatPanelBtn.addEventListener("click", () => {
-    const panel = document.querySelector("#formatting-btn-panel");
-
-    if (panel.style.display === "flex") {
-        panel.style.display = "none";
-    } else {
-        panel.style.display = "flex";
-    }
-});
