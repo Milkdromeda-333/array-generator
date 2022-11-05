@@ -131,8 +131,10 @@ formatPanelBtn.addEventListener("click", () => {
     if (panel.style.display === "flex") {
         panel.style.display = "none";
         panel.style.height = "0";
+        formatPanelBtn.textContent = "+ formatting buttons";
     } else {
         panel.style.height = "unset";
         panel.style.display = "flex";
+        formatPanelBtn.textContent = "- formatting buttons";
     }
 });

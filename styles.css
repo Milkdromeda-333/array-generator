@@ -72,14 +72,12 @@ button {
 #formatSec-toggler {
     cursor: pointer;
     width: fit-content;
-    padding: .5rem;
+    padding: 1rem;
     background-color: transparent;
-    border: none;
+    border: var(--white-btn-border);
     color: white;
-    border-bottom: var(--white-btn-border);
     border-radius: 0px;
-    padding: 1rem 0 .5rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 #formatSec-toggler:hover {
@@ -92,6 +90,7 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     gap: .5rem;
+    margin-top: 1rem;
 }
 
 .formatting-panel-btn-active {
@@ -213,9 +212,12 @@ details img {
         margin-bottom: 1rem;
     }
 
+    #formatSec-toggler {
+        width: 100%;
+    }
+
     .sec2-btns {
         flex-direction: column;
-        margin-top: 2.7rem;
     }
 
     #submit-btn {
@@ -235,6 +237,7 @@ details img {
 
     #canvas {
         margin: 0;
+        min-height: 60vh;
     }
 
     details img {
