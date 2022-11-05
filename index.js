@@ -1,41 +1,65 @@
-// VARIABLES
-
-const submitBtn = document.querySelector("#submit-btn");
+// DOM elements
 const input = document.querySelector("input");
 const canvas = document.querySelector("#canvas");
+
+const formatPanelBtn = document.querySelector("#formatSec-toggler");
+const submitBtn = document.querySelector("#submit-btn");
 const copyBtn = document.querySelector("#copy-btn");
 const clearBtn = document.querySelector("#clear-btn");
 const stringifyBtn = document.querySelector("#stringify-btn");
-let isStringified = false;
+const formatBtn = document.querySelector("#line-by-line-btn");
+
+// VRIABLES
+const formattingOpts = {
+    isStringified: false,
+    isFormatted: false
+};
 const userArr = [];
+
 
 // FUNCTIONS
 
-// handles submitting the user input
+// callback function for triggering a re-render of the array
+function rerenderArr() {
+    let arr = document.createElement("p");
+    arr.className = "generated-arr";
+
+    if (formattingOpts.isFormatted) {
+        arr.innerHTML = `[${userArr.join(",<br> ")}]`;
+    } else {
+        arr.innerHTML = `[${userArr.join(", ")}]`;
+    }
+    canvas.lastChild && canvas.removeChild(canvas.lastChild);
+    canvas.appendChild(arr);
+    console.log(arr.innerHTML);
+}
+
+// DOCS: handles submitting the user input
 function submit() {
 
     let element = input.value;
-    if (isStringified === true) {
+
+    // adds " " around element
+    if (formattingOpts.isStringified === true) {
         element = `"${input.value}"`;
     }
+
     userArr.push(element);
-    let arr = document.createElement("p");
-    arr.className = "generated-arr";
-    arr.innerHTML = `[${userArr.join(", ")}]`;
-    arr.style.fontSize = "1.5rem";
-    canvas.lastChild && canvas.removeChild(canvas.lastChild);
-    canvas.appendChild(arr);
+    rerenderArr();
     input.value = "";
 }
 
-// submits users input if they hit enter
+// EVENT LISTENERS
+
+
+// DOCS: submits users input if they hit enter
 document.addEventListener("keyup", (e) => {
     if (e.code === "Enter") {
         submit();
     }
 });
 
-// submits users input if they hit the submit button
+// DOCS: submits users input if they hit the submit button
 submitBtn.addEventListener("click", submit);
 
 
@@ -50,15 +74,13 @@ copyBtn.addEventListener("click", () => {
         copyBtn.classList.add("copy-btn-copied");
         navigator.clipboard.writeText(canvas.lastChild.textContent);
 
-        // removes the copy notif after 2 secs
+        // DOCS: removes the copy notif after 2 secs
         setTimeout(() => {
             copyBtn.classList.remove("copy-btn-copied");
         }, 2000);
     } else {
         canvas.textContent = "Nothing here to copy...";
-        return;
     }
-
 });
 
 clearBtn.addEventListener("click", () => {
@@ -66,18 +88,49 @@ clearBtn.addEventListener("click", () => {
     userArr.length = 0;
 });
 
-// onclick the program will toggle stringifying the users input
+// DOCS: onclick the program will toggle stringifying the users input
 stringifyBtn.addEventListener("click", () => {
 
-    if (isStringified === true) {
-        isStringified = false;
-        stringifyBtn.textContent = "stringify!";
-    } else if (isStringified === false) {
-        isStringified = true;
-        stringifyBtn.textContent = "UNstringify!";
-    }
+    if (formattingOpts.isStringified === true) {
 
-    console.log(isStringified);
+        formattingOpts.isStringified = false;
+        stringifyBtn.classList.toggle("formatting-panel-btn-inactive");
+        stringifyBtn.classList.remove("formatting-panel-btn-active");
+
+    } else if (formattingOpts.isStringified === false) {
+
+        formattingOpts.isStringified = true;
+        stringifyBtn.classList.toggle("formatting-panel-btn-active");
+        stringifyBtn.classList.remove("formatting-panel-btn-inactive");
+
+    }
 });
 
-console.log("isstringifyed onmount: " + isStringified);
+formatBtn.addEventListener("click", () => {
+
+    if (formattingOpts.isFormatted === true) {
+
+        formattingOpts.isFormatted = false;
+        formatBtn.classList.toggle("formatting-panel-btn-inactive");
+        formatBtn.classList.remove("formatting-panel-btn-active");
+        rerenderArr();
+
+    } else if (formattingOpts.isFormatted === false) {
+
+        formattingOpts.isFormatted = true;
+        formatBtn.classList.toggle("formatting-panel-btn-active");
+        formatBtn.classList.remove("formatting-panel-btn-inactive");
+        rerenderArr();
+    }
+});
+
+// toggles the format button panel
+formatPanelBtn.addEventListener("click", () => {
+    const panel = document.querySelector("#formatting-btn-panel");
+
+    if (panel.style.display === "flex") {
+        panel.style.display = "none";
+    } else {
+        panel.style.display = "flex";
+    }
+});

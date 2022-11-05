@@ -16,15 +16,14 @@ To be done:
 
 [ ] add themes lol
 
-[ ] add favicon
-
 [  ] give formatting options. 
 [x] for string
 [ ] array literals
 [ ] object literals
-[ ] each element on it's own line
+[x] each element on it's own line
 
 [x] add button to clear array
 
 [x] responsiveness
 
+[x] add favicon

@@ -17,9 +17,19 @@
 
         <!-- INPUT -->
         <div class="form">
-            <input type="text" id="input" placeholder="your element" />
-            <button id="submit-btn">submit</button>
-            <button id="stringify-btn">stringify!</button>
+            <div class="">
+                <input type="text" id="input" placeholder="your element" />
+                <button id="submit-btn">submit</button>
+            </div>
+
+            <div class="formatSec">
+                <button class="formatSec-closed" id="formatSec-toggler" aria-label="format-buttons">vvv
+                    formatting buttons</button>
+                <div id="formatting-btn-panel" class="active" aria-labelledby="formatSec-toggler">
+                    <button class="formatting-panel-btn-inactive" id="stringify-btn">" "</button>
+                    <button class="formatting-panel-btn-inactive" id="line-by-line-btn">line-by-line</button>
+                </div>
+            </div>
         </div>
 
         <!-- ARRAY GENERATOR -->
