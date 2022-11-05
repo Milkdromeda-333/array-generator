@@ -76,8 +76,4 @@ stringifyBtn.addEventListener("click", () => {
         isStringified = true;
         stringifyBtn.textContent = "UNstringify!";
     }
-
-    console.log(isStringified);
 });
-
-console.log("isstringifyed onmount: " + isStringified);
