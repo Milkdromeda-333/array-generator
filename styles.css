@@ -140,8 +140,13 @@ details img {
         margin-top: 2.7rem;
     }
 
-    #submit-btn {
+    #submit-btn,
+    #stringify-btn {
         width: 100%;
+    }
+
+    #stringify-btn {
+        margin-top: 1rem;
     }
 
     #clear-btn {
