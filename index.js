@@ -62,7 +62,6 @@ document.addEventListener("keyup", (e) => {
 // DOCS: submits users input if they hit the submit button
 submitBtn.addEventListener("click", submit);
 
-
 copyBtn.addEventListener("click", () => {
     if (canvas.textContent === "Nothing here to copy...") {
         return;
@@ -72,7 +71,7 @@ copyBtn.addEventListener("click", () => {
         canvas.lastChild.style.color = "white";
         canvas.lastChild.style.padding = "0";
         copyBtn.classList.add("copy-btn-copied");
-        navigator.clipboard.writeText(canvas.lastChild.textContent);
+        navigator.clipboard.writeText(canvas.lastChild.innerText);
 
         // DOCS: removes the copy notif after 2 secs
         setTimeout(() => {
@@ -82,6 +81,8 @@ copyBtn.addEventListener("click", () => {
         canvas.textContent = "Nothing here to copy...";
     }
 });
+
+
 
 clearBtn.addEventListener("click", () => {
     canvas.removeChild(canvas.lastChild);
@@ -121,5 +122,17 @@ formatBtn.addEventListener("click", () => {
         formatBtn.classList.toggle("formatting-panel-btn-active");
         formatBtn.classList.remove("formatting-panel-btn-inactive");
         rerenderArr();
+    }
+});
+
+formatPanelBtn.addEventListener("click", () => {
+    const panel = document.querySelector("#formatting-btn-panel");
+
+    if (panel.style.display === "flex") {
+        panel.style.display = "none";
+        panel.style.height = "0";
+    } else {
+        panel.style.height = "unset";
+        panel.style.display = "flex";
     }
 });
