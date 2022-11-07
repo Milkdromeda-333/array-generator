@@ -8,13 +8,15 @@ const copyBtn = document.querySelector("#copy-btn");
 const clearBtn = document.querySelector("#clear-btn");
 const stringifyBtn = document.querySelector("#stringify-btn");
 const formatBtn = document.querySelector("#line-by-line-btn");
+const stringifyEachBtn = document.querySelector("#stringify-everything-btn");
 
 // VRIABLES
 const formattingOpts = {
     isStringified: false,
-    isFormatted: false
+    isFormatted: false,
+    isAllStringified: false
 };
-const userArr = [];
+let userArr = [];
 
 
 // FUNCTIONS
@@ -31,7 +33,6 @@ function rerenderArr() {
     }
     canvas.lastChild && canvas.removeChild(canvas.lastChild);
     canvas.appendChild(arr);
-    console.log(arr.innerHTML);
 }
 
 // DOCS: handles submitting the user input
@@ -137,4 +138,18 @@ formatPanelBtn.addEventListener("click", () => {
         panel.style.display = "flex";
         formatPanelBtn.textContent = "- formatting buttons";
     }
+});
+
+stringifyEachBtn.addEventListener("click", () => {
+
+    if (formattingOpts.isAllStringified === false) {
+        formattingOpts.isAllStringified = true;
+        userArr = userArr.join(" ").split(" ").map(item => `"${item}"`);
+    } else if (formattingOpts.isAllStringified === true) {
+        formattingOpts.isAllStringified = false;
+        userArr = userArr.map(item => `${item.substring(1, item.length - 1)}`);
+        console.log(userArr);
+    }
+    rerenderArr();
+
 });

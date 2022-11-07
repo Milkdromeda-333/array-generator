@@ -2,7 +2,7 @@
     --white-btn-border: 2px solid white;
     --black-btn-border: 2px solid black;
     --black-btn-bg-hover: rgb(24, 24, 24);
-    --white-btn-bg-hover: rgb(239, 234, 234);
+    --white-btn-bg-hover: rgb(224, 219, 219);
 }
 
 * {
@@ -143,6 +143,7 @@ button {
     flex-wrap: wrap;
     margin-top: 1rem;
     top: -55px;
+    gap: 1rem;
 }
 
 #copy-btn {
@@ -162,7 +163,6 @@ button {
 #clear-btn {
     background-color: red;
     color: white;
-    margin-left: 1rem;
 }
 
 #clear-btn:hover {
@@ -177,6 +177,10 @@ button {
     transform: translate(-50%, -50%);
     text-align: center;
     transition: all 300ms ease-in-out;
+}
+
+#stringify-everything-btn:hover {
+    background-color: var(--white-btn-bg-hover);
 }
 
 .generated-arr {
