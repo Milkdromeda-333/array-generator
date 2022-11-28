@@ -1,68 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Mono&display=swap');
+
 :root {
     --white-btn-border: 2px solid white;
     --black-btn-border: 2px solid black;
     --black-btn-bg-hover: rgb(24, 24, 24);
     --white-btn-bg-hover: rgb(224, 219, 219);
+    --main-bg-clr: #181818;
+    --font: 'Raleway', sans-serif;
+    --decor-font: 'Roboto Mono', monospace;
+    --secondary-clr: #daa676;
+    --secondary-clr-shade: rgba(218, 166, 118, 0.934);
 }
+
+
 
 * {
     box-sizing: border-box;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: var(--font);
 }
 
 body {
-    background-color: forestgreen;
+    background-color:var(--main-bg-clr);
     color: white;
     text-align: center;
 }
 
 main {
-    margin: 2rem;
+    margin: 1rem;
 }
+
 
 h1 {
     font-size: 3rem;
+    font-family: var(--decor-font);
+   margin: 0;
+    color: var(--secondary-clr);
+    opacity: 0;
+    position: relative;
+    bottom: 100px;
+    transition: all 700ms ease-in;
 }
 
-button {
-    border: var(--black-btn-border);
+.form-1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
 }
 
 input {
-    color: black;
+    color: white;
+    background-color: transparent;
     width: 40%;
-    height: 55px;
     border: none;
     border-bottom: 2px solid white;
-    border-radius: 5px;
     font-weight: bold;
-    padding: .5rem;
+    padding: 0 0 .2rem .5rem;
+    caret-color: var(--secondary-clr);
+    font-size: 1rem;
+    transition: 100ms ease-in-out;
 }
 
+
 #submit-btn {
-    background-color: black;
+    text-align: center;
+    background-color: transparent;
     color: white;
-    border: var(--white-btn-border);
+    transition: 100ms ease-in-out;
+    position: relative;
+    overflow: hidden;
+    line-height: 2.5rem;
+    padding: 0;
+    border: 2px solid var(--secondary-clr);
+}
+
+#submit-btn::after{
+    content: "✔";
+    position: absolute;
+    right: -10%;
+    opacity: 0;
+    transition: 200ms ease;
+}
+
+#submit-btn:hover::after{
+    right: 12%;
+    opacity: 1;
 }
 
 #submit-btn:hover {
-    background-color: var(--black-btn-bg-hover);
+    background-color: var(--secondary-clr);
+}
+
+#submit-btn:active{
+    background-color: rgb(217, 163, 113);
 }
 
 input:focus,
 input:active {
-    outline-color: black;
+    outline: none;
+    border-bottom: 4px solid var(--secondary-clr);
 }
 
 button {
     border-radius: 5px;
-    padding: 1rem 0;
-    width: 10rem;
+    padding: .5rem 0;
+    width: 8rem;
     font-size: 1.2rem;
     transition: all 100ms ease-in;
 }
 
-/* FORMATING BUTTONS */
+/* ===== FORMATING BUTTONS ===== */
 .formatSec {
     display: flex;
     flex-direction: column;
@@ -81,7 +130,7 @@ button {
 }
 
 #formatSec-toggler:hover {
-    color: rgb(232, 232, 232);
+    color: var(--secondary-clr);
 }
 
 #formatting-btn-panel {
@@ -161,12 +210,12 @@ button {
 }
 
 #clear-btn {
-    background-color: red;
+    background-color: var(--secondary-clr);
     color: white;
 }
 
 #clear-btn:hover {
-    background-color: rgb(220, 3, 3);
+    background-color: var(--secondary-clr-shade);
 }
 
 .copy-btn-copied::before {
@@ -188,8 +237,9 @@ button {
 }
 
 details {
-    width: 90%;
+    width: 70%;
     margin: 1.5rem auto;
+    color: var(--secondary-clr);
 }
 
 details img {

@@ -10,7 +10,7 @@ const stringifyBtn = document.querySelector("#stringify-btn");
 const formatBtn = document.querySelector("#line-by-line-btn");
 const stringifyEachBtn = document.querySelector("#stringify-everything-btn");
 
-// VRIABLES
+// VARIABLES
 const formattingOpts = {
     isStringified: false,
     isFormatted: false,
@@ -18,8 +18,12 @@ const formattingOpts = {
 };
 let userArr = [];
 
-
 // FUNCTIONS
+
+window.onload = () => {
+    document.querySelector("h1").style.opacity = 1;
+    document.querySelector("h1").style.bottom = "0px";
+};
 
 // callback function for triggering a re-render of the array
 function rerenderArr() {
@@ -40,7 +44,6 @@ function submit() {
 
     let element = input.value;
 
-    // adds " " around element
     if (formattingOpts.isStringified === true) {
         element = `"${input.value}"`;
     }
@@ -51,7 +54,6 @@ function submit() {
 }
 
 // EVENT LISTENERS
-
 
 // DOCS: submits users input if they hit enter
 document.addEventListener("keyup", (e) => {
@@ -68,7 +70,7 @@ copyBtn.addEventListener("click", () => {
         return;
     }
     if (canvas.lastChild) {
-        canvas.lastChild.style.backgroundColor = "black";
+        canvas.lastChild.style.backgroundColor = "rgb(218, 166, 118)";
         canvas.lastChild.style.color = "white";
         canvas.lastChild.style.padding = "0";
         copyBtn.classList.add("copy-btn-copied");

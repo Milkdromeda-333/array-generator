@@ -1,29 +1,13 @@
 # array-generator
 
 This project was made because I needed to manually make a not-very-small array one too many times. 
-I decided to make this in vanilla javascript to dust off my ol' JS skills after learning React for so long.
-I'm very proud of this, and I plan on making more vanilla javascript mini projects and tools this way.
+I decided to make this in vanilla JavaScript to dust off my ol' JS skills after learning React for so long.
+I'm very proud of this, and I plan on making more vanilla JavaScript mini projects and tools this way.
 
 With this project I:
 
-- Practiced determination. I forgot how to do not-React javascript. It was a long night.
-- Learned to delete a git remote (because i added git to the wrong folder🙃)
-- Learned that codesandbox is kinda crappy.
+- Practiced determination. I forgot how to do not-React JavaScript. It was a long night.
 
-To be done:
+- Learned to delete a git remote (because I added git to the wrong folder🙃)
 
-[ ] add animation styling to the copy button after its clicked
-
-[ ] add themes lol
-
-[  ] give formatting options. 
-[x] for string
-[ ] array literals
-[ ] object literals
-[x] each element on it's own line
-
-[x] add button to clear array
-
-[x] responsiveness
-
-[x] add favicon
+- Implemented animations without tutorials based on inspirations found on the web.
