@@ -85,7 +85,7 @@ input {
 }
 
 #submit-btn:hover::after{
-    right: 12%;
+    right: 10%;
     opacity: 1;
 }
 
@@ -94,7 +94,7 @@ input {
 }
 
 #submit-btn:active{
-    background-color: rgb(217, 163, 113);
+    background-color: rgb(197, 150, 107);
 }
 
 input:focus,
@@ -125,12 +125,13 @@ button {
     background-color: transparent;
     border: var(--white-btn-border);
     color: white;
-    border-radius: 0px;
+    border-radius: 2px;
     margin-top: 1rem;
 }
 
 #formatSec-toggler:hover {
-    color: var(--secondary-clr);
+    color: rgb(224, 222, 222);
+    border-color: rgb(224, 222, 222);
 }
 
 #formatting-btn-panel {
@@ -175,6 +176,7 @@ button {
     width: 70%;
     min-height: 50vh;
     margin-inline: auto;
+    background-color: var(--main-bg-clr);
 }
 
 #canvas {
@@ -202,7 +204,7 @@ button {
 }
 
 #copy-btn:hover {
-    background-color: var(--black-btn-bg-hover);
+    background-color: #282828;
 }
 
 #copy-btn {
@@ -216,6 +218,10 @@ button {
 
 #clear-btn:hover {
     background-color: var(--secondary-clr-shade);
+}
+
+#clear-btn:active{
+    background-color: #bc9067;
 }
 
 .copy-btn-copied::before {
@@ -243,7 +249,7 @@ details {
 }
 
 details img {
-    width: 40%;
+    width: 30%;
     margin-bottom: 3rem;
     border-radius: 10px;
 }
